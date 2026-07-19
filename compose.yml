@@ -1,0 +1,147 @@
+x-ark-common: &ark-common
+  image: ghcr.io/gregoirechauvet/ark-server:proton-10
+  restart: unless-stopped
+  mem_limit: 16G
+  init: true
+  stop_grace_period: 2m
+
+services:
+  config:
+    image: nginx:alpine
+    container_name: ark-config
+    volumes:
+      - /home/debian/games/ark/week/dynamicconfig.ini:/usr/share/nginx/html/dynamicconfig.ini:ro
+
+  theisland:
+    <<: *ark-common
+    container_name: ark-theisland
+    ports:
+      - "7777:7777/udp"
+      - "7778:7778/udp"
+    env_file: .env
+    environment:
+      - SERVER_MAP=TheIsland_WP
+      - SESSION_NAME=Edelweiss - The Island
+      - SERVER_PORT=7777
+      - SERVER_PASSWORD=${SERVER_PASSWORD}
+      - SERVER_ADMIN_PASSWORD=${SERVER_ADMIN_PASSWORD}
+    volumes:
+      - /home/debian/games/ark/week/config:/home/steam/ark/ShooterGame/Saved/Config/WindowsServer:ro
+      - /home/debian/games/ark/week/serverfiles:/home/steam/ark
+      - /home/debian/games/ark/week/cluster:/home/steam/ark/ShooterGame/Saved/clusters/LeSamyx
+      - /home/debian/games/ark/week/theisland:/home/steam/ark/ShooterGame/Saved
+
+  scorchedearth:
+    <<: *ark-common
+    container_name: ark-scorchedearth
+    ports:
+      - "7779:7779/udp"
+      - "7780:7780/udp"
+    env_file: .env
+    environment:
+      - SERVER_MAP=ScorchedEarth_WP
+      - SESSION_NAME=Edelweiss - Scorched Earth
+      - SERVER_PORT=7779
+      - SERVER_PASSWORD=${SERVER_PASSWORD}
+      - SERVER_ADMIN_PASSWORD=${SERVER_ADMIN_PASSWORD}
+    volumes:
+      - /home/debian/games/ark/week/config:/home/steam/ark/ShooterGame/Saved/Config/WindowsServer:ro
+      - /home/debian/games/ark/week/serverfiles:/home/steam/ark
+      - /home/debian/games/ark/week/cluster:/home/steam/ark/ShooterGame/Saved/clusters/LeSamyx
+      - /home/debian/games/ark/week/scorchedearth:/home/steam/ark/ShooterGame/Saved
+
+  aberration:
+    <<: *ark-common
+    container_name: ark-aberration
+    ports:
+      - "7781:7781/udp"
+      - "7782:7782/udp"
+    env_file: .env
+    environment:
+      - SERVER_MAP=Aberration_WP
+      - SESSION_NAME=Edelweiss - Aberration
+      - SERVER_PORT=7781
+      - SERVER_PASSWORD=${SERVER_PASSWORD}
+      - SERVER_ADMIN_PASSWORD=${SERVER_ADMIN_PASSWORD}
+    volumes:
+      - /home/debian/games/ark/week/config:/home/steam/ark/ShooterGame/Saved/Config/WindowsServer:ro
+      - /home/debian/games/ark/week/serverfiles:/home/steam/ark
+      - /home/debian/games/ark/week/cluster:/home/steam/ark/ShooterGame/Saved/clusters/LeSamyx
+      - /home/debian/games/ark/week/aberration:/home/steam/ark/ShooterGame/Saved
+
+  extinction:
+    <<: *ark-common
+    container_name: ark-extinction
+    ports:
+      - "7783:7783/udp"
+      - "7784:7784/udp"
+    env_file: .env
+    environment:
+      - SERVER_MAP=Extinction_WP
+      - SESSION_NAME=Edelweiss - Extinction
+      - SERVER_PORT=7783
+      - SERVER_PASSWORD=${SERVER_PASSWORD}
+      - SERVER_ADMIN_PASSWORD=${SERVER_ADMIN_PASSWORD}
+    volumes:
+      - /home/debian/games/ark/week/config:/home/steam/ark/ShooterGame/Saved/Config/WindowsServer:ro
+      - /home/debian/games/ark/week/serverfiles:/home/steam/ark
+      - /home/debian/games/ark/week/cluster:/home/steam/ark/ShooterGame/Saved/clusters/LeSamyx
+      - /home/debian/games/ark/week/extinction:/home/steam/ark/ShooterGame/Saved
+
+  valguero:
+    <<: *ark-common
+    container_name: ark-valguero
+    ports:
+      - "7785:7785/udp"
+      - "7786:7786/udp"
+    env_file: .env
+    environment:
+      - SERVER_MAP=Valguero_WP
+      - SESSION_NAME=Edelweiss - Valguero
+      - SERVER_PORT=7785
+      - SERVER_PASSWORD=${SERVER_PASSWORD}
+      - SERVER_ADMIN_PASSWORD=${SERVER_ADMIN_PASSWORD}
+    volumes:
+      - /home/debian/games/ark/week/config:/home/steam/ark/ShooterGame/Saved/Config/WindowsServer:ro
+      - /home/debian/games/ark/week/serverfiles:/home/steam/ark
+      - /home/debian/games/ark/week/cluster:/home/steam/ark/ShooterGame/Saved/clusters/LeSamyx
+      - /home/debian/games/ark/week/valguero:/home/steam/ark/ShooterGame/Saved
+
+  lostcolony:
+    <<: *ark-common
+    mem_limit: 24G
+    container_name: ark-lostcolony
+    ports:
+      - "7787:7787/udp"
+      - "7788:7788/udp"
+    env_file: .env
+    environment:
+      - SERVER_MAP=LostColony_WP
+      - SESSION_NAME=Edelweiss - Lost Colony
+      - SERVER_PORT=7787
+      - SERVER_PASSWORD=${SERVER_PASSWORD}
+      - SERVER_ADMIN_PASSWORD=${SERVER_ADMIN_PASSWORD}
+    volumes:
+      - /home/debian/games/ark/week/config:/home/steam/ark/ShooterGame/Saved/Config/WindowsServer:ro
+      - /home/debian/games/ark/week/serverfiles:/home/steam/ark
+      - /home/debian/games/ark/week/cluster:/home/steam/ark/ShooterGame/Saved/clusters/LeSamyx
+      - /home/debian/games/ark/week/lostcolony:/home/steam/ark/ShooterGame/Saved
+
+  genesis1:
+    <<: *ark-common
+    container_name: ark-genesis1
+    ports:
+      - "7789:7789/udp"
+      - "7790:7790/udp"
+    env_file: .env
+    environment:
+      - SERVER_MAP=Genesis_WP
+      - SESSION_NAME=Edelweiss - Genesis 1
+      - SERVER_PORT=7789
+      - SERVER_PASSWORD=${SERVER_PASSWORD}
+      - SERVER_ADMIN_PASSWORD=${SERVER_ADMIN_PASSWORD}
+    volumes:
+      - /home/debian/games/ark/week/config:/home/steam/ark/ShooterGame/Saved/Config/WindowsServer:ro
+      - /home/debian/games/ark/week/serverfiles:/home/steam/ark
+      - /home/debian/games/ark/week/cluster:/home/steam/ark/ShooterGame/Saved/clusters/LeSamyx
+      - /home/debian/games/ark/week/genesis1:/home/steam/ark/ShooterGame/Saved
