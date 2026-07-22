@@ -29,7 +29,7 @@ services:
     volumes:
       - /home/debian/games/ark/week/config:/home/steam/ark/ShooterGame/Saved/Config/WindowsServer:ro
       - /home/debian/games/ark/week/serverfiles:/home/steam/ark
-      - /home/debian/games/ark/week/cluster:/home/steam/ark/ShooterGame/Saved/clusters/LeSamyx
+      - /home/debian/games/ark/week/clusters:/home/steam/ark/ShooterGame/Saved/clusters
       - /home/debian/games/ark/week/theisland:/home/steam/ark/ShooterGame/Saved
 
   scorchedearth:
@@ -48,7 +48,7 @@ services:
     volumes:
       - /home/debian/games/ark/week/config:/home/steam/ark/ShooterGame/Saved/Config/WindowsServer:ro
       - /home/debian/games/ark/week/serverfiles:/home/steam/ark
-      - /home/debian/games/ark/week/cluster:/home/steam/ark/ShooterGame/Saved/clusters/LeSamyx
+      - /home/debian/games/ark/week/clusters:/home/steam/ark/ShooterGame/Saved/clusters
       - /home/debian/games/ark/week/scorchedearth:/home/steam/ark/ShooterGame/Saved
 
   aberration:
@@ -67,7 +67,7 @@ services:
     volumes:
       - /home/debian/games/ark/week/config:/home/steam/ark/ShooterGame/Saved/Config/WindowsServer:ro
       - /home/debian/games/ark/week/serverfiles:/home/steam/ark
-      - /home/debian/games/ark/week/cluster:/home/steam/ark/ShooterGame/Saved/clusters/LeSamyx
+      - /home/debian/games/ark/week/clusters:/home/steam/ark/ShooterGame/Saved/clusters
       - /home/debian/games/ark/week/aberration:/home/steam/ark/ShooterGame/Saved
 
   extinction:
@@ -86,7 +86,7 @@ services:
     volumes:
       - /home/debian/games/ark/week/config:/home/steam/ark/ShooterGame/Saved/Config/WindowsServer:ro
       - /home/debian/games/ark/week/serverfiles:/home/steam/ark
-      - /home/debian/games/ark/week/cluster:/home/steam/ark/ShooterGame/Saved/clusters/LeSamyx
+      - /home/debian/games/ark/week/clusters:/home/steam/ark/ShooterGame/Saved/clusters
       - /home/debian/games/ark/week/extinction:/home/steam/ark/ShooterGame/Saved
 
   valguero:
@@ -105,7 +105,7 @@ services:
     volumes:
       - /home/debian/games/ark/week/config:/home/steam/ark/ShooterGame/Saved/Config/WindowsServer:ro
       - /home/debian/games/ark/week/serverfiles:/home/steam/ark
-      - /home/debian/games/ark/week/cluster:/home/steam/ark/ShooterGame/Saved/clusters/LeSamyx
+      - /home/debian/games/ark/week/clusters:/home/steam/ark/ShooterGame/Saved/clusters
       - /home/debian/games/ark/week/valguero:/home/steam/ark/ShooterGame/Saved
 
   lostcolony:
@@ -125,7 +125,7 @@ services:
     volumes:
       - /home/debian/games/ark/week/config:/home/steam/ark/ShooterGame/Saved/Config/WindowsServer:ro
       - /home/debian/games/ark/week/serverfiles:/home/steam/ark
-      - /home/debian/games/ark/week/cluster:/home/steam/ark/ShooterGame/Saved/clusters/LeSamyx
+      - /home/debian/games/ark/week/clusters:/home/steam/ark/ShooterGame/Saved/clusters
       - /home/debian/games/ark/week/lostcolony:/home/steam/ark/ShooterGame/Saved
 
   genesis1:
@@ -144,5 +144,5 @@ services:
     volumes:
       - /home/debian/games/ark/week/config:/home/steam/ark/ShooterGame/Saved/Config/WindowsServer:ro
       - /home/debian/games/ark/week/serverfiles:/home/steam/ark
-      - /home/debian/games/ark/week/cluster:/home/steam/ark/ShooterGame/Saved/clusters/LeSamyx
+      - /home/debian/games/ark/week/clusters:/home/steam/ark/ShooterGame/Saved/clusters
       - /home/debian/games/ark/week/genesis1:/home/steam/ark/ShooterGame/Saved
