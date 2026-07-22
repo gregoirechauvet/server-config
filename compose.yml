@@ -4,6 +4,9 @@ x-ark-common: &ark-common
   mem_limit: 16G
   init: true
   stop_grace_period: 2m
+  userns_mode: keep-id
+  sysctls:
+    - net.ipv4.ping_group_range=0 2147483647
 
 services:
   config:
