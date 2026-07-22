@@ -1,5 +1,5 @@
 x-ark-common: &ark-common
-  image: ghcr.io/gregoirechauvet/ark-server:baked-proton-10-latest
+  image: ghcr.io/gregoirechauvet/ark-server:proton-10
   restart: unless-stopped
   mem_limit: 16G
   init: true
@@ -27,6 +27,7 @@ services:
       - SERVER_ADMIN_PASSWORD=${SERVER_ADMIN_PASSWORD}
     volumes:
       - /home/debian/games/ark/week/config:/home/steam/ark/ShooterGame/Saved/Config/WindowsServer:ro
+      - /home/debian/games/ark/week/serverfiles:/home/steam/ark
       - /home/debian/games/ark/week/cluster:/home/steam/ark/ShooterGame/Saved/clusters/LeSamyx
       - /home/debian/games/ark/week/theisland:/home/steam/ark/ShooterGame/Saved
 
@@ -45,6 +46,7 @@ services:
       - SERVER_ADMIN_PASSWORD=${SERVER_ADMIN_PASSWORD}
     volumes:
       - /home/debian/games/ark/week/config:/home/steam/ark/ShooterGame/Saved/Config/WindowsServer:ro
+      - /home/debian/games/ark/week/serverfiles:/home/steam/ark
       - /home/debian/games/ark/week/cluster:/home/steam/ark/ShooterGame/Saved/clusters/LeSamyx
       - /home/debian/games/ark/week/scorchedearth:/home/steam/ark/ShooterGame/Saved
 
@@ -63,6 +65,7 @@ services:
       - SERVER_ADMIN_PASSWORD=${SERVER_ADMIN_PASSWORD}
     volumes:
       - /home/debian/games/ark/week/config:/home/steam/ark/ShooterGame/Saved/Config/WindowsServer:ro
+      - /home/debian/games/ark/week/serverfiles:/home/steam/ark
       - /home/debian/games/ark/week/cluster:/home/steam/ark/ShooterGame/Saved/clusters/LeSamyx
       - /home/debian/games/ark/week/aberration:/home/steam/ark/ShooterGame/Saved
 
@@ -81,6 +84,7 @@ services:
       - SERVER_ADMIN_PASSWORD=${SERVER_ADMIN_PASSWORD}
     volumes:
       - /home/debian/games/ark/week/config:/home/steam/ark/ShooterGame/Saved/Config/WindowsServer:ro
+      - /home/debian/games/ark/week/serverfiles:/home/steam/ark
       - /home/debian/games/ark/week/cluster:/home/steam/ark/ShooterGame/Saved/clusters/LeSamyx
       - /home/debian/games/ark/week/extinction:/home/steam/ark/ShooterGame/Saved
 
@@ -99,6 +103,7 @@ services:
       - SERVER_ADMIN_PASSWORD=${SERVER_ADMIN_PASSWORD}
     volumes:
       - /home/debian/games/ark/week/config:/home/steam/ark/ShooterGame/Saved/Config/WindowsServer:ro
+      - /home/debian/games/ark/week/serverfiles:/home/steam/ark
       - /home/debian/games/ark/week/cluster:/home/steam/ark/ShooterGame/Saved/clusters/LeSamyx
       - /home/debian/games/ark/week/valguero:/home/steam/ark/ShooterGame/Saved
 
@@ -118,6 +123,7 @@ services:
       - SERVER_ADMIN_PASSWORD=${SERVER_ADMIN_PASSWORD}
     volumes:
       - /home/debian/games/ark/week/config:/home/steam/ark/ShooterGame/Saved/Config/WindowsServer:ro
+      - /home/debian/games/ark/week/serverfiles:/home/steam/ark
       - /home/debian/games/ark/week/cluster:/home/steam/ark/ShooterGame/Saved/clusters/LeSamyx
       - /home/debian/games/ark/week/lostcolony:/home/steam/ark/ShooterGame/Saved
 
@@ -136,5 +142,6 @@ services:
       - SERVER_ADMIN_PASSWORD=${SERVER_ADMIN_PASSWORD}
     volumes:
       - /home/debian/games/ark/week/config:/home/steam/ark/ShooterGame/Saved/Config/WindowsServer:ro
+      - /home/debian/games/ark/week/serverfiles:/home/steam/ark
       - /home/debian/games/ark/week/cluster:/home/steam/ark/ShooterGame/Saved/clusters/LeSamyx
       - /home/debian/games/ark/week/genesis1:/home/steam/ark/ShooterGame/Saved
